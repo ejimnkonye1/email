@@ -1,9 +1,9 @@
 require('dotenv').config();
 require('express-async-errors');
-
+const cors = require("cors");
 const express = require('express');
 const app = express();
-
+app.use(cors());
 const sendEmailRouter = require('./routes/sendEmail.routes');
 
 // Error handlers

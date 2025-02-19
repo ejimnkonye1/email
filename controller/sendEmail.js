@@ -23,14 +23,11 @@ const sendEmail = async (req, res) => {
         });
 
         const mailOptions = {
-            from: `"${name}" <${email}>`,
+            from: `<${email}>`,
             to: process.env.RECEIVER_EMAIL,
-            subject: `New contact form submission: ${subject}`,
+            subject: `${subject}`,
             replyTo: email,
             html: `
-                <p><strong>Name:</strong> ${name}</p>
-                <p><strong>Email:</strong> ${email}</p>
-                <p><strong>Subject:</strong> ${subject}</p>
                 <p><strong>Message:</strong> ${message}</p>
             `
         };
